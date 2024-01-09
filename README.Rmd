@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# jodudr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `jodudr` is to collect functions I've found useful for data analysis.
+
+## Installation
+
+You can install the development version of jodudr from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("JoDudding/jodudr")
+```
+
+# Date functions
+
+## `eom_date`
+
+This determines the last day of month n months ago:
+
+```{r eom-date-example-2}
+library(jodudr)
+eom_date(lubridate::ymd('2022-04-19'), 13)
+```
+
+Used without parameters it will give the last day of the current month (run on 
+`r lubridate::today()`):
+```{r eom-date-example-1}
+eom_date()
+```
+
+## `friday_wk`
+
+> TODO
