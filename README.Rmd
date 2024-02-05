@@ -28,24 +28,86 @@ You can install the development version of jodudr from [GitHub](https://github.c
 # install.packages("devtools")
 devtools::install_github("JoDudding/jodudr")
 ```
+Let's load it and some other useful packages
+
+```{r load-jodudr, message=FALSE}
+library(jodudr)
+library(tidyverse)
+library(scales)
+```
+
+# Options
+
+## `jo_options()`
+
+This will set the options I use most often. Namely:
+
+- `dplyr.width = Inf`
+- `papersize = "a4"`
+- `tab.width = 2`
+- `width = 80`
+- `max.print = 25`
+- `stringsAsFactors = FALSE`
+- `lubridate.week.start = 6`
+- `tibble.print_max = 25`
+- `tibble.print_min = 25`
+- `tibble.width = Inf`
+- `dplyr.summarise.inform = FALSE`
+- `tidyverse.quiet = TRUE`
 
 # Date functions
 
-## `eom_date`
+## `eom_date(d)`
 
 This determines the last day of month n months ago:
 
-```{r eom-date-example-2}
-library(jodudr)
-eom_date(lubridate::ymd('2022-04-19'), 13)
+```{r eom-date-example-1}
+eom_date(ymd('2022-04-19'), 13)
 ```
 
 Used without parameters it will give the last day of the current month (run on 
 `r lubridate::today()`):
-```{r eom-date-example-1}
+```{r eom-date-example-2}
 eom_date()
 ```
 
 ## `friday_wk`
 
-> TODO
+Get last day of the week where week ends on Friday
+
+```{r friday-wk-example-1}
+d <- ymd('2024-02-06') # a tuesday
+friday_wk(d)
+```
+
+# Theming
+
+## `jo_pal_grad(n)`
+
+This will create a vector of n colours from my primary colour to my secondary colour.
+
+```{r jo-pal-grad-example-1}
+jo_pal_grad(6) |> 
+  show_col()
+```
+
+> TODO ggplot2 theme
+
+# Analysis helpers
+
+## `summaryx(data, var)`
+
+```{r summaryx-example-1}
+as_tibble(mtcars) |> 
+  summaryx(mpg) |> 
+  glimpse()
+```
+Will also work with grouping applied.
+
+```{r summaryx-example-2}
+dplyr::as_tibble(mtcars) |> 
+  group_by(cyl) |> 
+  summaryx(mpg) |> 
+  select(cyl, min, max, mean)
+```
+

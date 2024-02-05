@@ -1,0 +1,16 @@
+url: ~
+template:
+  bootstrap: 5
+  bootswatch: lux
+  theme: ayu-light
+  bslib:
+    #base_font: {google: "Roboto"}
+    #heading_font: {google: "Roboto Slab"}
+    #code_font: {google: "JetBrains Mono"}
+    #bg: ""
+    #fg: ""
+    primary: "#8B008B"
+    secondary: "#EEB422"
+    #code-bg: "#FFFACD"
+    #code-color: ""
+
