@@ -1,16 +1,13 @@
-url: ~
+url: https://jodudding.github.io/jodudr/
 template:
   bootstrap: 5
-  bootswatch: lux
-  theme: ayu-light
+  bootswatch: pulse
   bslib:
-    #base_font: {google: "Roboto"}
-    #heading_font: {google: "Roboto Slab"}
-    #code_font: {google: "JetBrains Mono"}
-    #bg: ""
-    #fg: ""
-    primary: "#8B008B"
-    secondary: "#EEB422"
-    #code-bg: "#FFFACD"
-    #code-color: ""
+    primary: '#5F187F'
+    secondary: '#FF823E'
+    bg: '#FFFFE0'
+    fg: '#340048'
+    base_font: {google: "Montserrat"}
+    code_font: {google: "Fira Code"}
+
 
