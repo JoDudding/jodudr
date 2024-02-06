@@ -91,7 +91,16 @@ jo_pal_grad(6) |>
   show_col()
 ```
 
-> TODO ggplot2 theme
+## `theme_jo()`
+
+Apply my theme to ggplot2 charts.
+
+```{r theme_jo-example-1}
+ggplot(mapping = aes(x = letters[1:10], y = 1:10, fill = rep(c('o', 'e'), times = 5))) +
+  geom_col() +
+  labs(x = 'letter', y = 'number', fill = 'odd/even', title = 'dummy chart') +
+  theme_jo()
+```
 
 # Analysis helpers
 

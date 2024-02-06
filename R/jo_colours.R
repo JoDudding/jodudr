@@ -1,3 +1,9 @@
+#' Jo palette
+#'
+#' This is my colour palette
+#'
+#' @name jo_pal
+#' @export
 jo_pal <- list(
   primary = "#5F187F",
   secondary = "#FF823E",
