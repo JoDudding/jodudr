@@ -1,3 +1,12 @@
+jo_pal <- list(
+  primary = "#5F187F",
+  secondary = "#FF823E",
+  body = "#340048",
+  rev = "#FFFFE0",
+  bg = "transparent",
+  grid = "#B486D4"
+)
+
 #' Create a gradient from primary (purple) to secondary (orange) colour
 #'
 #' @param n Number of colours to generate
@@ -7,13 +16,7 @@
 #' @examples
 #' jo_pal_grad(6)
 jo_pal_grad <- function(n) {
-  jo_primary <- "#5F187F"
-  jo_secondary <- "#FF823E"
-  jo_body <- "#340048"
-  jo_rev <- "#FFFFE0"
-  jo_bg <- "transparent"
-  jo_grid <- "#B486D4"
-  grDevices::colorRampPalette(c(jo_primary, jo_secondary))(n)
+  grDevices::colorRampPalette(c(jo_pal$primary, jo_pal$secondary))(n)
 }
 
 
