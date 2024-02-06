@@ -1,7 +1,7 @@
 url: https://jodudding.github.io/jodudr/
 template:
   bootstrap: 5
-  bootswatch: pulse
+  #bootswatch: pulse
   bslib:
     primary: '#5F187F'
     secondary: '#FF823E'

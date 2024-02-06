@@ -24,7 +24,17 @@ library(testthat)
 #use_r('summaryx')
 
 #use_test("eom_date")
-use_test("friday_wk")
+#use_test("friday_wk")
+
+#-------------------------------------------------------------------------------
+# get github connection
+#-------------------------------------------------------------------------------
+
+readr::read_csv(
+  list.files('C:/Users/jmdud/Documents (local)', pattern = 'git', full.names = TRUE)
+) |>
+  dplyr::pull(RStudio) |>
+  credentials::set_github_pat()
 
 usethis::git_sitrep()
 
@@ -33,12 +43,8 @@ document()
 test()
 build_readme()
 check()
-
-pkgdown::build_site()
-
 install()
-
-
+pkgdown::build_site()
 
 
 #-------------------------------------------------------------------------------
@@ -136,7 +142,9 @@ hex_plot <- ggplot(hexagon) +
 
 hex_plot
 
-
+#-------------------------------------------------------------------------------
+# create hexsticker logo
+#-------------------------------------------------------------------------------
 
 sticker(hex_plot, package = 'jodudr',
   p_size=27, p_x = 1, p_y = 1, p_color = pal[6], p_family = 'montserrat',
@@ -150,58 +158,10 @@ sticker(hex_plot, package = '',
         h_size = 0, h_fill = col, h_color = col,
         filename="inst/figures/jodudr-plain.png")
 
+#-------------------------------------------------------------------------------
+# use logo
+#-------------------------------------------------------------------------------
 
-library(jodudr)
-eom_date()
+usethis::use_logo(img = 'inst/figures/jodudr.png')
 
-#pal <- viridisLite::magma(8)[2:8]
-
-#scales::show_col(pal)
-
-
-#here::here()
-
-
-
-library(tidyverse)
-
-color_lookup <- colors(distinct = TRUE) |>
-  enframe() |>
-  rename(color_name = value) |>
-  select(color_name) |>
-  mutate(rgb = map(color_name, col2rgb),
-         red = map_int(rgb, 1),
-         green = map_int(rgb, 2),
-         blue = map_int(rgb, 3),
-         rgb_hex = pmap_chr(list(red, green, blue), .f = ~rgb(..1, ..2, ..3, maxColorValue = 255)))
-
-color_lookup |>
-  filter(
-    str_detect(color_name, 'purple|violet|mauve|lilac|electric|grape|royal|eggplant|orchid|amethyst')
-  ) |>
-  slice(1:20) |>
-  pull(rgb_hex) |>
-  scales::show_col()
-
-scales::show_col(c('goldenrod2', 'darkmagenta', 'chartreuse2', 'lavenderblush',
-                   'lemonchiffon1', 'lightgoldenrod1', 'thistle1', 'chocolate4', 'deeppink3'))
-
-library(tidyverse)
-
-colour_hex <- colors() |>
-  tibble::enframe() |>
-  rename(colour_name = value) |>
-  mutate(
-    rgb = map(colour_name, col2rgb),
-    red = map_int(rgb, 1),
-    green = map_int(rgb, 2),
-    blue = map_int(rgb, 3),
-    rgb_hex = pmap_chr(list(red, green, blue), .f = ~rgb(..1, ..2, ..3, maxColorValue = 255))
-  )
-
-colour_hex |>
-  filter(
-    colour_name %in% c('goldenrod2', 'darkmagenta', 'chartreuse2', 'lavenderblush',
-      'lemonchiffon1', 'lightgoldenrod1', 'thistle1', 'chocolate4', 'deeppink3')
-  )
 

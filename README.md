@@ -48,7 +48,7 @@ This will set the options I use most often. Namely:
 
 # Date functions
 
-## `eom_date(d)`
+## `eom_date()`
 
 This determines the last day of month n months ago:
 
@@ -65,7 +65,7 @@ eom_date()
 #> [1] "2024-02-29"
 ```
 
-## `friday_wk`
+## `friday_wk()`
 
 Get last day of the week where week ends on Friday
 
@@ -77,7 +77,7 @@ friday_wk(d)
 
 # Theming
 
-## `jo_pal_grad(n)`
+## `jo_pal_grad()`
 
 This will create a vector of n colours from my primary colour to my
 secondary colour.
@@ -93,7 +93,7 @@ jo_pal_grad(6) |>
 
 # Analysis helpers
 
-## `summaryx(data, var)`
+## `summaryx()`
 
 ``` r
 as_tibble(mtcars) |> 
