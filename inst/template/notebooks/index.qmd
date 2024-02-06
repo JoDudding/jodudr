@@ -1,0 +1,9 @@
+---
+title: "Report name"
+format: html
+---
+
+```{r}
+#| label: source-setup
+source('scripts/_setup.r') 
+```

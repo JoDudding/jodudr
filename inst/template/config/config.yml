@@ -1,0 +1,10 @@
+project:
+  name: TODO
+  description: TODO
+  analyst: Jo Dudding
+  stakeholder: TODO
+  jira: TODO
+  confluence: TODO
+  git: TODO
+  params:
+    date_0: '2024-01-01'

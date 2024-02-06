@@ -1,0 +1,15 @@
+---
+title: "Project name"
+format: gfm
+
+execute:
+  warning: false
+  echo: false
+  error: false
+---
+
+```{r}
+#| label: source-setup
+source('scripts/_setup.r') 
+```
+
