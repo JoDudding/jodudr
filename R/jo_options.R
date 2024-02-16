@@ -2,6 +2,7 @@
 #' Set the options I use most often
 #'
 #' @return Options have been set
+#' @export
 jo_options <- function() {
   options(
     dplyr.width = Inf,

@@ -2,6 +2,7 @@
 
 export(eom_date)
 export(friday_wk)
+export(jo_options)
 export(jo_pal)
 export(jo_pal_grad)
 export(summaryx)

@@ -58,7 +58,7 @@ eom_date(ymd('2022-04-19'), 13)
 ```
 
 Used without parameters it will give the last day of the current month
-(run on 2024-02-07):
+(run on 2024-02-16):
 
 ``` r
 eom_date()
@@ -97,6 +97,8 @@ Apply my theme to ggplot2 charts.
 ggplot(mapping = aes(x = letters[1:10], y = 1:10, fill = rep(c('o', 'e'), times = 5))) +
   geom_col() +
   labs(x = 'letter', y = 'number', fill = 'odd/even', title = 'dummy chart') +
+  scale_y_continuous(expand = expansion(c(0, NA))) +
+  scale_fill_manual(values = c(jo_pal$primary, jo_pal$secondary)) +
   theme_jo()
 ```
 

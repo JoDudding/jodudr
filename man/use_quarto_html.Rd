@@ -14,6 +14,8 @@ use_quarto_html(
 \arguments{
 \item{report_name}{short name for your report}
 
+\item{folder}{folder to save the report to - defaults to notebooks}
+
 \item{open}{should the file be opened after being created}
 
 \item{...}{arguments to be passed to \link[usethis]{use_template}}
@@ -24,7 +26,7 @@ Call and open the quarto html template
 \examples{
 \donttest{
 if(interactive()){
-  use_quarto_html(name = "new-report")
+  use_quarto_html(name = "Very important report")
 }
 }
 
