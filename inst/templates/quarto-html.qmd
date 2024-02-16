@@ -1,5 +1,6 @@
 ---
-title: "Report name"
+title: "{{report_name}}"
+date: "{{report_date}}"
 format: html
 ---
 
